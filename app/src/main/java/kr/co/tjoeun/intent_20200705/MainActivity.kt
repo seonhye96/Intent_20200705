@@ -34,15 +34,15 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        moveToBackBtn.setOnClickListener {
-
-        //돌아갈때는 Intent 사용X
-            //val myIntent = Intent(this, MainActivity::class.java)
-            //startActivity(myIntent)
-
-//            지금 보는 액티비티를 종료 => 이전화면으로 돌아감
-            finish()
-
-        }
+//        moveToBackBtn.setOnClickListener {
+//에러가 나는데 왜 날까...?
+//        //돌아갈때는 Intent 사용X
+//        //val myIntent = Intent(this, MainActivity::class.java)
+//        //startActivity(myIntent)
+//
+////            지금 보는 액티비티를 종료 => 이전화면으로 돌아감
+//            finish()
+//
+//        }
     }
 }
