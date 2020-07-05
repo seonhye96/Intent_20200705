@@ -48,7 +48,7 @@ class EditNickActivity : AppCompatActivity() {
 //            완료를 누른게 맞는지 확인
             if (resultCode == Activity.RESULT_OK){
 
-//                결과로 받아온 닉네임을 텐스트뷰에 적용
+//                결과로 받아온 닉네임을 텍스트뷰에 적용
                 val newNickName = data?.getStringExtra("nick") // 널이 아닐때만 실행시켜주세요.
 
                 nickNameTxt.text = newNickName
