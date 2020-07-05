@@ -56,6 +56,13 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        androidTestBtn.setOnClickListener {
+
+            val myIntent = Intent(this, AndroidIntent_20200705::class.java)
+            startActivity(myIntent)
+
+        }
+
 //        moveToBackBtn.setOnClickListener {
 //에러가 나는데 왜 날까...?
 //        //돌아갈때는 Intent 사용X
