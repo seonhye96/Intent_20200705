@@ -28,8 +28,15 @@ class AndroidIntent_20200705 : AppCompatActivity() {
             val myIntent = Intent(Intent.ACTION_DIAL, myUri)
 
             startActivity(myIntent)
+        }
 
+        callBtn.setOnClickListener {
 
+            val inputPhoneNum = phoneNumEdt.text.toString()
+            val myUri = Uri.parse("tel:${inputPhoneNum}")
+            val myIntent = Intent(Intent.ACTION_CALL, myUri)
+
+            startActivity(myIntent)
         }
     }
 }
