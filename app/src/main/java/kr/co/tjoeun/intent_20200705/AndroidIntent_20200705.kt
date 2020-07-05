@@ -53,7 +53,14 @@ class AndroidIntent_20200705 : AppCompatActivity() {
             myIntent.putExtra("sms_body", content)
 
             startActivity(myIntent)
+        }
 
+        naverLinkBtn.setOnClickListener {
+
+//            Uri에 실제 인터넷 주소 대입
+            val myUri = Uri.parse("https://naver.com")
+            val myIntent = Intent(Intent.ACTION_VIEW, myUri)
+            startActivity(myIntent)
 
         }
     }
