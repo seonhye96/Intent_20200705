@@ -13,11 +13,12 @@
         android:layout_height="wrap_content"
         android:text="변경할 닉네임"/>
 
-    <EitText
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="새 닉네임을 입력하세요"
-        />
+        android:singleLine="true"
+        android:textSize="20sp" />
 
     <Button
         android:layout_width="match_parent"
