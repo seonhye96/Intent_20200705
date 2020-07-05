@@ -3,6 +3,7 @@ package kr.co.tjoeun.intent_20200705
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_first.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -16,6 +17,17 @@ class MainActivity : AppCompatActivity() {
             val myIntent = Intent(this, FirstActivity::class.java) //this:여기에서부터 시작할거야! 도착지는 FirstActivity!
 //            실제로 출발
             startActivity(myIntent)
+
+        }
+
+        moveToBackBtn.setOnClickListener {
+
+//        돌아갈때는 Intent 사용X
+//            val myIntent = Intent(this, MainActivity::class.java)
+//            startActivity(myIntent)
+
+//            지금 보는 액티비티를 종료 => 이전화면으로 돌아감
+            finish()
 
         }
     }
