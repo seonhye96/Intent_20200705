@@ -20,11 +20,25 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+//        두번째 화면 버튼 누르면
+        sendToSecondBtn.setOnClickListener {
+
+//            입력한 메세지 받아오기
+            val inputMessage = msgEdt.text.toString()
+
+//            두번째 화면으로 이동하기
+            val myIntent = Intent(this, SecondActivity::class.java)
+            //myintent에 데이터 붙여주기
+            myIntent.putExtra("message", inputMessage)
+            startActivity(myIntent)
+
+        }
+
         moveToBackBtn.setOnClickListener {
 
-//        돌아갈때는 Intent 사용X
-//            val myIntent = Intent(this, MainActivity::class.java)
-//            startActivity(myIntent)
+        //돌아갈때는 Intent 사용X
+            //val myIntent = Intent(this, MainActivity::class.java)
+            //startActivity(myIntent)
 
 //            지금 보는 액티비티를 종료 => 이전화면으로 돌아감
             finish()
