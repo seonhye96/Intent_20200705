@@ -1,5 +1,6 @@
 package kr.co.tjoeun.intent_20200705
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,7 +9,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-//    숫자 1000 대신 코드에
+//    숫자 1000 대신 코드에 어떤 요청인지 읽기 쉽도록 하는 조치
     val REQ_CODE_FOR_NICKNAME = 1000
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,5 +65,32 @@ class MainActivity : AppCompatActivity() {
 //            finish()
 //
 //        }
+    }
+
+
+//    오버라이드|MainActivity로 복귀하는 모든 시점에 실행되는 함수.
+//    ex. 닉네임을 받으러갔다 => OK로 돌아와도 실행
+//    ex. 닉네임을 받으러갔다 => 취소로 돌아와도 실행
+//    ex. 비밀번호을 변경하러 갔다 => OK로 돌아와도 실행
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+//        어떤걸 가지러 다녀온건지 확인 (닉네임 인지)
+        if (requestCode == 1000){
+
+//            완료를 누른게 맞는지 확인
+            if (resultCode == Activity.RESULT_OK){
+
+//                결과로 받아온 닉네임을 텍스트뷰에 적용
+                val newNickName = data?.getStringExtra("nick") // 널이 아닐때만 실행시켜주세요.
+
+                nickNameTxt.text = newNickName
+
+            }
+
+        }
+
+
     }
 }
