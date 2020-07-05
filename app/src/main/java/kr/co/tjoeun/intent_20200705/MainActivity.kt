@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-//    숫자 1000 대신 코드에 어떤 요청인지 읽기 쉽도록 하는 조치
+    //    숫자 1000 대신 코드에 어떤 요청인지 읽기 쉽도록 하는 조치
     val REQ_CODE_FOR_NICKNAME = 1000
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +19,8 @@ class MainActivity : AppCompatActivity() {
         moveToFirstBtn.setOnClickListener {
 
 //            비행기 티켓 발권 (출발 / 도착)
-            val myIntent = Intent(this, FirstActivity::class.java) //this:여기에서부터 시작할거야! 도착지는 FirstActivity!
+            val myIntent =
+                Intent(this, FirstActivity::class.java) //this:여기에서부터 시작할거야! 도착지는 FirstActivity!
 //            실제로 출발
             startActivity(myIntent)
 
@@ -77,10 +78,10 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
 //        어떤걸 가지러 다녀온건지 확인 (닉네임 인지)
-        if (requestCode == 1000){
+        if (requestCode == 1000) {
 
 //            완료를 누른게 맞는지 확인
-            if (resultCode == Activity.RESULT_OK){
+            if (resultCode == Activity.RESULT_OK) {
 
 //                결과로 받아온 닉네임을 텍스트뷰에 적용
                 val newNickName = data?.getStringExtra("nick") // 널이 아닐때만 실행시켜주세요.
