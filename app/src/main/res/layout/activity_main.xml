@@ -12,6 +12,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/moveToFirstBtn"
         android:text="첫번째 화면으로 이동하기"/>
 
 </LinearLayout>
